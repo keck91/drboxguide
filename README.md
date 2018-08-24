@@ -5,7 +5,7 @@ https://medium.com/@zhanwenchen/install-cuda-and-cudnn-for-tensorflow-gpu-on-ubu
 https://github.com/BVLC/caffe/wiki/Ubuntu-16.04-or-15.10-Installation-Guide \
 https://github.com/adeelz92/Install-Caffe-on-Ubuntu-16.04-Python-3 \
 https://medium.com/@mengjiunchiou/build-opencv-caffe-with-cuda-9-0-on-ubuntu-16-04-b2794a41612d \
-### Install Ubuntu 16.04.5 LTS (Xenial Xerus) \
+### Install Ubuntu 16.04.5 LTS (Xenial Xerus) 
 Download 64-bit desktop image from [Ubuntu website](http://releases.ubuntu.com/16.04/) \
 Install Ubuntu
 
