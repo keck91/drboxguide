@@ -1,15 +1,15 @@
-#This is guide to install drbox with caffe and CUDA 8.0, cuDNN 5.1, Python 2.7 under Ubuntu 16.04 with GPU support \
+# This is guide to install drbox with caffe and CUDA 8.0, cuDNN 5.1, Python 2.7 under Ubuntu 16.04 with GPU support 
 The makefile.config that I used is attached. \
 Also, I used the following guides: \
 https://medium.com/@zhanwenchen/install-cuda-and-cudnn-for-tensorflow-gpu-on-ubuntu-79306e4ac04e \
 https://github.com/BVLC/caffe/wiki/Ubuntu-16.04-or-15.10-Installation-Guide \
 https://github.com/adeelz92/Install-Caffe-on-Ubuntu-16.04-Python-3 \
 https://medium.com/@mengjiunchiou/build-opencv-caffe-with-cuda-9-0-on-ubuntu-16-04-b2794a41612d \
-###Install Ubuntu 16.04.5 LTS (Xenial Xerus) \
+### Install Ubuntu 16.04.5 LTS (Xenial Xerus) \
 Download 64-bit desktop image from [Ubuntu website](http://releases.ubuntu.com/16.04/) \
 Install Ubuntu
 
-###Install CUDA 8.0 \
+### Install CUDA 8.0 
 Install NVIDIA driver version 384 
 ```Shell
 sudo apt-get install nvidia-384 nvidia-modprobe
@@ -54,7 +54,7 @@ After completion, run tests
 cd /usr/local/cuda/samples/bin/x86_64/linux/release
 ./deviceQuery
 ```
-###Install cuDNN 5.1
+### Install cuDNN 5.1
 Go to [cuDNN download page](https://developer.nvidia.com/rdp/cudnn-download) and select cuDNN version 5.1 for CUDA 8.0 \
 Download all 3 .deb-files (runtime library, developer library & code samples) \
 Install them in the same order
@@ -78,7 +78,7 @@ export LD_LIBRARY_PATH="LD_LIBRARY_PATH=${LD_LIBRARY_PATH:+${LD_LIBRARY_PATH}:}/
 ```Shell
 source ~/.bashrc
 ```
-###Install OpenCV \
+### Install OpenCV 
 Install dependencies
 ```Shell
 sudo apt-get install build-essential
@@ -103,7 +103,7 @@ mkdir build
 
 cd build
 ```
-###Install caffe/drbox \
+### Install caffe/drbox 
 Update and upgrade
 ```Shell
 sudo apt-get update
