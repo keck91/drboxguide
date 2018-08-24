@@ -96,6 +96,114 @@ mkdir build
 
 cd build
 ```
+###Install caffe/drbox \
+Update and upgrade
+```Shell
+sudo apt-get update
+sudo apt-get upgrade
+```
+Install dependencies
+```Shell
+sudo apt-get install libprotobuf-dev libleveldb-dev libsnappy-dev libopencv-dev libhdf5-serial-dev protobuf-compiler
+sudo apt-get install --no-install-recommends libboost-all-dev
+sudo apt-get install libatlas-base-dev
+sudo apt-get install libopenblas-dev
+sudo apt-get install libgflags-dev libgoogle-glog-dev liblmdb-dev
+```
+Download drbox repository
+```Shell
+sudo apt-get install git
+git clone https://github.com/liulei01/DRBox.git
+cd drbox
+```
+Add caffe python path to the $PYTHONPATH
+```Shell
+export PYTHONPATH=/path/to/caffe/python
+```
+Copy Makefile.config
+```Shell
+cp Makefile.config.example Makefile.config
+```
+Edit Makefile.config
+```Shell
+vim Makefile.config
+```
+```Shell
+#Comment CPU_ONLY
+CPU_ONLY = 1
+# Change CUDA directory
+CUDA_DIR := /usr/local/cuda-8.0
+#In CUDA_ARCH, delete before *30 for compatibility
+CUDA_ARCH := -gencode arch=compute_30,code=sm_30 \
+             -gencode arch=compute_35,code=sm_35 \
+             -gencode arch=compute_50,code=sm_50 \
+             -gencode arch=compute_52,code=sm_52 \
+             -gencode arch=compute_61,code=sm_61
+# Edit PYTHON_INCLUDE
+PYTHON_INCLUDE := /usr/include/python2.7 \
+		/usr/lib/python2.7/dist-packages/numpy/core/include
+# Uncomment Python layer
+WITH_PYTHON_LAYER := 1
+# Edit INCLUDE_DIRS & LIBRARY_DIRS
+INCLUDE_DIRS := $(PYTHON_INCLUDE) /usr/local/include \
+                /usr/include/hdf5/serial/
+LIBRARY_DIRS := $(PYTHON_LIB) /usr/local/lib /usr/lib /usr/lib/x86_64-linux-gnu /usr/lib/x86_64-linux-gnu/hdf5/serial     
+```
+Close and save file \
+Link some other files
+```Shell
+cd /usr/lib/x86_64-linux-gnu
+
+sudo ln -s libhdf5_serial.so.10.1.0 libhdf5.so
+
+sudo ln -s libhdf5_serial_hl.so.10.0.2 libhdf5_hl.so 
+```
+Install python requirements
+```Shell
+sudo apt-get install python-pip
+cd python
+for req in $(cat requirements.txt); do pip install --no-cache-dir $req; done
+cd ..
+```
+Edit Makefile
+```Shell
+vim Makefile
+```
+and replace
+```Shell
+NVCCFLAGS += -ccbin=$(CXX) -Xcompiler -fPIC $(COMMON_FLAGS)
+```
+with this
+```Shell
+NVCCFLAGS += -D_FORCE_INLINES -ccbin=$(CXX) -Xcompiler -fPIC $(COMMON_FLAGS)
+```
+Also, open the file CMakeLists.txt and add the following line:
+```Shell
+# ---[ Includes
+set(${CMAKE_CXX_FLAGS} "-D_FORCE_INLINES ${CMAKE_CXX_FLAGS}")
+```
+Then
+```Shell
+make clean
+```
+```Shell
+make all
+```
+```Shell
+make test
+```
+```Shell
+make py
+```
+Test with Python
+```
+python
+import caffe
+caffe.__version__
+```
+
+
+
 
 
 
