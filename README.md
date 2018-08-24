@@ -214,7 +214,7 @@ vim ~/.bashrc
 # add the following line
 export PATH=path/to/caffe/build/tools:$PATH
 ```
-###Comments
+### Comments
 After importing caffe to python, I keep getting warnings about binary incompatibility:
 ```Shell
 [...]
