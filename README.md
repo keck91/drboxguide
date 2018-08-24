@@ -62,10 +62,10 @@ Install them in the same order
 sudo dpkg -i libcudnn5_5.1.10-1+cuda8.0_amd64.deb
 ```
 ```Shell
-sudo dpkg -i libcudnn5-dev_5.1.10-1+cuda8.0_amd64
+sudo dpkg -i libcudnn5-dev_5.1.10-1+cuda8.0_amd64.deb
 ```
 ```Shell
-sudo dpkg -i libcudnn5-doc_5.1.10-1+cuda8.0_amd64
+sudo dpkg -i libcudnn5-doc_5.1.10-1+cuda8.0_amd64.deb
 ```
 Configure CUDA and cuDNN libraries
 ```Shell
@@ -136,7 +136,7 @@ Edit Makefile.config
 vim Makefile.config
 ```
 ```Shell
-#Comment CPU_ONLY
+# Comment CPU_ONLY
 CPU_ONLY = 1
 # Change CUDA directory
 CUDA_DIR := /usr/local/cuda-8.0
