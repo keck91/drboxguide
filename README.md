@@ -214,8 +214,14 @@ vim ~/.bashrc
 # add the following line
 export PATH=path/to/caffe/build/tools:$PATH
 ```
-
-
+###Comments
+After importing caffe to python, I keep getting warnings about binary incompatibility:
+```Shell
+[...]
+RuntimeWarning: numpy.dtype size changed, may indicate binary incompatibility. Expected 96, got 88
+[...]
+```
+[Issue #6678](https://github.com/ContinuumIO/anaconda-issues/issues/6678) covered this. I ignored them, too
 
 
 
