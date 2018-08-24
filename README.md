@@ -14,6 +14,9 @@ Install NVIDIA driver version 384
 ```Shell
 sudo apt-get install nvidia-384 nvidia-modprobe
 ```
+```Shell
+reboot
+```
 Download CUDA runfile installer from [NVIDIA website](https://developer.nvidia.com/cuda-downloads) \
 Choose CUDA 8.0 \
 Extract File
