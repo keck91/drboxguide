@@ -208,6 +208,12 @@ python
 import caffe
 caffe.__version__
 ```
+I also included caffe in my PATH in order to use the module caffe in command line mode
+```Shell
+vim ~/.bashrc
+# add the following line
+export PATH=path/to/caffe/build/tools:$PATH
+```
 
 
 
