@@ -1,6 +1,6 @@
 # This is guide to install drbox with caffe and CUDA 8.0, cuDNN 5.1, Python 2.7 under Ubuntu 16.04 with GPU support 
-The makefile.config that I used is attached. \
-Also, I used the following guides: \
+I am new to Linux and Deep-Learning. After three weeks I finally managed to install CUDA, cuDNN and the caffe framework to use the repository [DRBox](https://github.com/liulei01/DRBox) by [liulei01](https://github.com/liulei01). I combined different install guides and the solution below worked for me. The makefile.config that I used is also attached. \
+I used the following guides: \
 https://medium.com/@zhanwenchen/install-cuda-and-cudnn-for-tensorflow-gpu-on-ubuntu-79306e4ac04e \
 https://github.com/BVLC/caffe/wiki/Ubuntu-16.04-or-15.10-Installation-Guide \
 https://github.com/adeelz92/Install-Caffe-on-Ubuntu-16.04-Python-3 \
