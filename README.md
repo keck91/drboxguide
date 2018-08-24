@@ -1,3 +1,5 @@
+#This is guide to install drbox with caffe and CUDA 8.0, cuDNN 5.1 under Ubuntu 16.04 with GPU support
+##te
 ###Install Ubuntu 16.04.5 LTS (Xenial Xerus) \
 Download 64-bit desktop image from [Ubuntu website](http://releases.ubuntu.com/16.04/) \
 Install Ubuntu
