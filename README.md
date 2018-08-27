@@ -1,5 +1,5 @@
 # This is a guide to install DRBox with caffe and CUDA 8.0, cuDNN 5.1, Python 2.7 under Ubuntu 16.04 with GPU support 
-I am new to Linux and Deep-Learning. After three weeks I finally managed to install CUDA, cuDNN and the caffe framework to use the repository [DRBox](https://github.com/liulei01/DRBox) by [liulei01](https://github.com/liulei01). I combined different install guides and the solution below worked for me. The makefile.config that I used is also attached. I hope that it will same you some time and energy. Let me know if it worked for you. \
+I am new to Linux and Deep-Learning. After three weeks I finally managed to install CUDA, cuDNN and the caffe framework to use the repository [DRBox](https://github.com/liulei01/DRBox) by [liulei01](https://github.com/liulei01). I combined different install guides and the solution below worked for me. The makefile.config that I used is also attached. *You can use this guide for an installation of caffe only, too*. In that case, use the [BVLC repository](https://github.com/BVLC/caffe) instead of DRBox. I hope that it will same you some time and energy. Let me know if it worked for you. \
 I used the following guides: \
 https://medium.com/@zhanwenchen/install-cuda-and-cudnn-for-tensorflow-gpu-on-ubuntu-79306e4ac04e \
 https://github.com/BVLC/caffe/wiki/Ubuntu-16.04-or-15.10-Installation-Guide \
@@ -120,7 +120,8 @@ sudo apt-get install libatlas-base-dev
 sudo apt-get install libopenblas-dev
 sudo apt-get install libgflags-dev libgoogle-glog-dev liblmdb-dev
 ```
-Download drbox repository
+Download drbox repository \
+*Note: If you just want the original caffe repository, clone from [BVLC](https://github.com/BVLC/caffe) directly and use "make pycaffe" instead of "make py".* 
 ```Shell
 sudo apt-get install git
 git clone https://github.com/liulei01/DRBox.git
@@ -202,6 +203,9 @@ make all
 ```Shell
 make test
 ```
+*Note: Despite the runtest failed with DRBox, everything works fine. \
+If you only want caffe and not DRBox, the runtest should pass, though! \
+Use "make runtest" and "make pytest".*
 ```Shell
 make py
 ```
