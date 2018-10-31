@@ -144,7 +144,7 @@ vim Makefile.config
 ```
 ```Shell
 # Comment CPU_ONLY
-CPU_ONLY = 1
+# CPU_ONLY = 1
 # Change CUDA directory
 CUDA_DIR := /usr/local/cuda-8.0
 #In CUDA_ARCH, delete before *30 for compatibility
