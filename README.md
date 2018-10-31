@@ -43,16 +43,17 @@ sudo apt-get install vim
 sudo vim /etc/environment
 ```
 add :/usr/local/cuda/bin (including the ":") at the end of the PATH-string (inside the quotes) \
+You can use "i" do edit the text and "wq" to save and exit.
 Next, reboot
 ```Shell
 reboot
 ```
 Test installation
 ```Shell
-cd /usr/local/cuda-9.0/samples
+cd /usr/local/cuda-8.0/samples
 sudo make
 ```
-After completion, run tests
+After completion (takes a while), run tests
 ```Shell
 cd /usr/local/cuda/samples/bin/x86_64/linux/release
 ./deviceQuery
