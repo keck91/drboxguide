@@ -83,7 +83,7 @@ export LD_LIBRARY_PATH="LD_LIBRARY_PATH=${LD_LIBRARY_PATH:+${LD_LIBRARY_PATH}:}/
 source ~/.bashrc
 ```
 ### Install OpenCV 
-Install dependencies
+Install dependencies (note: "libtiff4-dev" may not be available. Use "libtiff5-dev" instead)
 ```Shell
 sudo apt-get install build-essential
 
