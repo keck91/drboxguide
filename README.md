@@ -83,6 +83,7 @@ export LD_LIBRARY_PATH="LD_LIBRARY_PATH=${LD_LIBRARY_PATH:+${LD_LIBRARY_PATH}:}/
 source ~/.bashrc
 ```
 ### Install OpenCV 
+This part is entirely taken from [Medium](https://medium.com/@mengjiunchiou/build-opencv-caffe-with-cuda-9-0-on-ubuntu-16-04-b2794a41612d). 
 Install dependencies (note: "libtiff4-dev" may not be available. Use "libtiff5-dev" instead)
 ```Shell
 sudo apt-get install build-essential
@@ -107,6 +108,7 @@ mkdir build
 
 cd build
 ```
+proceed like explained on Medium. I followed the instructions, even though I use CUDA 8.0 and not CUDA 9.0.
 ### Install caffe/drbox 
 Update and upgrade
 ```Shell
