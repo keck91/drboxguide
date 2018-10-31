@@ -235,6 +235,25 @@ RuntimeWarning: numpy.dtype size changed, may indicate binary incompatibility. E
 ```
 [Issue #6678](https://github.com/ContinuumIO/anaconda-issues/issues/6678) covered this. I ignored them, too
 
+### Update
+After "import caffe" I got error messages:
+'''Shell
+ImportError: libcublas.so.8.0: cannot open shared object file: No such file or directory
+'''
+'''Shell
+ImportError: No module named skimage.io
+'''
+I installed a few packages according to [5716](https://github.com/BVLC/caffe/issues/5716) and [8](https://github.com/NVIDIA/DIGITS/issues/8).
+'''Shell
+sudo apt-get install python-matplotlib python-numpy python-pil python-scipy
+sudo apt-get install python-skimage
+'''
+In bashrc I added
+'''Shell
+export CAFFE_ROOT=/home/username/caffe
+export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
+'''
+
 
 
 
